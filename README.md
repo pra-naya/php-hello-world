@@ -1,35 +1,43 @@
-# php-hello-world
-A simple hello-world for composer
+# Power Workshop Assessment Task
 
- [![Latest Stable Version](https://github.com/silarhi/php-hello-world/workflows/Tests/badge.svg)](https://github.com/silarhi/php-hello-world/workflows/Tests/badge.svg)
- [![Latest Stable Version](https://poser.pugx.org/silarhi/hello-world/v/stable)](https://packagist.org/packages/silarhi/hello-world)
-[![Total Downloads](https://poser.pugx.org/silarhi/hello-world/downloads)](https://packagist.org/packages/silarhi/hello-world)
-[![License](https://poser.pugx.org/silarhi/hello-world/license)](https://packagist.org/packages/silarhi/hello-world)
-
-
-[![SymfonyInsight](https://insight.symfony.com/projects/5d582202-1186-4ce7-82c7-c4d3a2c11807/big.svg)](https://insight.symfony.com/projects/5d582202-1186-4ce7-82c7-c4d3a2c11807)
-
-Installation
+Task I
 ------------
 
-Install with composer
+Build Docker Image
 ``` bash
-composer require silarhi/hello-world
+docker build -t pranaya123/php-hello-world:latest .
 ```
 
-Run composer update
+Run Docker Image
 ``` bash
-composer update silarhi/hello-world
+docker run -dp 0.0.0.0:8080:8080 php-hello-world
 ```
 
-Usage
------
-
-``` php
-require_once __DIR__ . '/vendor/autoload.php';
-
-use Silarhi\Hello;
-
-$hello = new Hello();
-echo $hello->display() . "\n";
+Build and Run Docker Image using docker-compose
+``` bash
+docker-compose build
+docker-compose up -d
 ```
+
+Output
+
+![image1](https://github.com/pra-naya/php-hello-world/assets/85820204/a8e7fd1f-aa0e-4619-9b8f-054a0da7949d)
+
+
+Login to DockerHub
+``` bash
+docker login
+```
+
+Push Image to DockerHub
+``` bash
+docker push pranaya123/php-hello-world:latest
+```
+![image3](https://github.com/pra-naya/php-hello-world/assets/85820204/8a3b8de2-c614-4a61-b5bb-0c4058833d2f)
+
+
+Task II
+------------
+
+Configure GitHub Actions
+![image2](https://github.com/pra-naya/php-hello-world/assets/85820204/acb3c420-316a-45a5-a03f-439bc3207faf)
